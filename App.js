@@ -12,7 +12,6 @@ export default function App() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
 
-  // Buscando todas tarefas ao iniciar o app
   useEffect(() => {
 
     async function loadTasks(){
@@ -27,7 +26,6 @@ export default function App() {
 
   }, []);
 
-  // Salvando cado tenha alguma tarefa alterada
   useEffect(() => {
     async function saveTasks(){
       await AsyncStorage.setItem('@task', JSON.stringify(task));
@@ -46,8 +44,8 @@ export default function App() {
     };
 
     setTask([...task, data]);
-    setOpen(false); // fecha aba de nova tarefa
-    setInput(''); // limpa input
+    setOpen(false);
+    setInput(''); 
   }
 
   const handleDelete = useCallback((data) => {
@@ -96,7 +94,7 @@ export default function App() {
             placeholder="What do you need to do today?"
             style={styles.input}
             value={input}
-            onChangeText={ (texto) => setInput(texto) }
+            onChangeText={ (text) => setInput(text) }
             />
             <TouchableOpacity style={styles.handleAdd} onPress={handleAdd}>
               <Text style={styles.handleAddText}>Add task</Text>
