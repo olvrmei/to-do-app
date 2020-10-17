@@ -1,2 +1,2 @@
 # To Do App
-🔨 readme in the works...
+Classic to-do list app using React Native and Expo.
